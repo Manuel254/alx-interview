@@ -13,7 +13,7 @@ def pascal_triangle(n):
     array = [[1]]
 
     for i in range(n - 1):
-        new_array = [];
+        new_array = []
         copy_array = array[i].copy()
         copy_array.insert(0, 0)
         copy_array.append(0)
