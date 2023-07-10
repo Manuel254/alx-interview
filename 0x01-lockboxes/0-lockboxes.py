@@ -16,6 +16,9 @@ def canUnlockAll(boxes):
     while stack:
         idx = stack.pop()
 
+        if idx >= len(boxes):
+            visited.remove(idx)
+            continue
         for j in boxes[idx]:
             if j not in visited:
                 stack.append(j)
