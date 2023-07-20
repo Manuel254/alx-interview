@@ -11,11 +11,12 @@ def print_status_codes(code, file_size):
     for key, val in code.items():
         print("{}: {}".format(key, val))
 
+
 code = {}
 file_size = 0
 vals_total = 0
-    
-try: 
+
+try:
     for line in stdin:
         line = line.split()
         file_size += int(line[-1])
@@ -27,10 +28,10 @@ try:
             code[status] = 1
         else:
             code[status] += 1
-        
+
         vals_total += 1
-        
-        if vals_total % 10 == 0 :
+
+        if vals_total % 10 == 0:
             print_status_codes(code, file_size)
 except KeyboardInterrupt:
     print_status_codes(code, file_size)
