@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""This module contains the solution for the log parsing problem"""
 from sys import stdin
 
 
