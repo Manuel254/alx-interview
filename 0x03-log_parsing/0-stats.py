@@ -20,9 +20,12 @@ try:
     for line in stdin:
         line = line.split()
         file_size += int(line[-1])
-        status = line[-2]
+        status = int(line[-2])
         vals = list(code.values())
         vals_total = sum(vals)
+
+        if not status or type(status) != int:
+            continue
 
         if vals_total % 10 == 0:
             if code:
@@ -36,8 +39,6 @@ try:
 
         vals_total += 1
         
-        
-
-        
 except KeyboardInterrupt:
-    print_status_codes(code)
+    pass
+    # print_status_codes(code)
