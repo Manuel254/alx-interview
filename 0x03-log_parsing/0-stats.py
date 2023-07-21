@@ -3,7 +3,7 @@
 from sys import stdin
 
 
-def print_status_codes(code, file_size):
+def print_status_codes(code):
     """Prints the status code with its count.
     Format:
         <status>: <count>
@@ -24,7 +24,10 @@ try:
         vals = list(code.values())
         vals_total = sum(vals)
 
-        print("File size: {}".format(file_size))
+        if vals_total % 10 == 0:
+            if code:
+                print("File size: {}".format(file_size))
+                print_status_codes(code)
 
         if status not in code:
             code[status] = 1  
@@ -32,9 +35,9 @@ try:
             code[status] += 1
 
         vals_total += 1
-        print_status_codes(code, file_size)
+        
+        
 
-        if vals_total % 10 == 0:
-            continue
+        
 except KeyboardInterrupt:
-    print_status_codes(code, file_size)
+    print_status_codes(code)
