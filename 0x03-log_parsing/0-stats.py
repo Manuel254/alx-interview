@@ -37,7 +37,7 @@ try:
             print("File size: {}".format(total))
             print_status_codes(code)
 
-except KeyboardInterrupt:
+except Exception:
     pass
 
 finally:
