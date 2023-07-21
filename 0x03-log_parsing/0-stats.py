@@ -34,12 +34,12 @@ try:
 
         if vals_total == 10:
             vals_total = 0
-            print("File size: {}".format(file_size))
+            print("File size: {}".format(total))
             print_status_codes(code)
 
 except KeyboardInterrupt:
     pass
 
 finally:
-    print("File size: {}".format(file_size))
+    print("File size: {}".format(total))
     print_status_codes(code)
