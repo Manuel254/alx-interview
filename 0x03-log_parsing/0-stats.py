@@ -8,8 +8,7 @@ def print_status_codes(code, file_size):
     Format:
         <status>: <count>
     """
-    print("File size: {}".format(file_size))
-    for key, val in code.items():
+    for key, val in sorted(code.items()):
         print("{}: {}".format(key, val))
 
 
@@ -25,14 +24,17 @@ try:
         vals = list(code.values())
         vals_total = sum(vals)
 
+        print("File size: {}".format(file_size))
+
         if status not in code:
-            code[status] = 1
+            code[status] = 1  
         else:
             code[status] += 1
 
         vals_total += 1
+        print_status_codes(code, file_size)
 
         if vals_total % 10 == 0:
-            print_status_codes(code, file_size)
+            continue
 except KeyboardInterrupt:
     print_status_codes(code, file_size)
