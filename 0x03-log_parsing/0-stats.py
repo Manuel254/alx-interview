@@ -18,25 +18,25 @@ vals_total = 0
 
 try:
     for line in sys.stdin:
-        l = line.split(" ")
+        line_arr = line.split(" ")
 
-        if len(l) > 4:
-            file_size= int(l[-1])
-            status = l[-2]
+        if len(line_arr) > 4:
+            file_size = int(line_arr[-1])
+            status = line_arr[-2]
 
             if status not in code:
-                code[status] = 1  
+                code[status] = 1
             else:
                 code[status] += 1
 
             total += file_size
             vals_total += 1
-        
+
         if vals_total == 10:
             vals_total = 0
             print("File size: {}".format(file_size))
             print_status_codes(code)
-    
+
 except KeyboardInterrupt:
     pass
 
