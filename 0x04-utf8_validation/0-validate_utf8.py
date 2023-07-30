@@ -2,6 +2,8 @@
 """This module contains the solution to UTF-8 validation
 problem
 """
+
+
 def validUTF8(data):
     """Determines if a given data set represents
     a valid UTF-8 encoding"""
