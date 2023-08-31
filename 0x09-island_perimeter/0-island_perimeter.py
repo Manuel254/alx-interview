@@ -20,7 +20,7 @@ def island_perimeter(grid):
         perimeter += dfs(i - 1, j)
         return perimeter
 
-    if not len(grid) and not len(grid[0]):
+    if not len(grid) or not len(grid[0]):
         return 0
 
     for i in range(len(grid)):
